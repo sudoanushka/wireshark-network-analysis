@@ -1,0 +1,25 @@
+DNS Traffic — Screenshot Analysis
+
+The Wireshark capture shows DNS traffic filtered using the "dns" display filter. The traffic involves 
+the hosts "192.168.x.x" and "192.168.y.y".
+
+The selected packet is a DNS query originating from "192.168.x.x" and directed to "192.168.y.y". 
+At the transport layer, the packet uses UDP with source port "34714" and destination port "53", 
+which is the standard DNS service port.
+
+The packet details show the protocol layers as Ethernet II, IPv4, UDP, and DNS. The capture also 
+contains DNS responses in the opposite direction, from "192.168.y.y" to "192.168.x.x".
+
+Several DNS records are visible in the capture, including A, AAAA, and CNAME records. The traffic
+includes DNS lookups for domains such as "www.youtube.com", "aus5.mozilla.org", "googleads.g.doubleclick.net",
+and Mozilla-related CDN domains.
+
+This capture demonstrates how Wireshark can be used to examine DNS communication, identify the systems involved,
+determine the transport protocol and ports being used, and inspect DNS record types at packet level.
+
+Key Observation:
+The selected packet follows this communication pattern:
+
+"192.168.x.x:34714 → UDP → 192.168.y.y:53 → DNS Query"
+
+The corresponding responses visible in the capture demonstrate the query-response nature of DNS communication.
