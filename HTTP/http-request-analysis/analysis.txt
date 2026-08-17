@@ -1,0 +1,29 @@
+HTTP Request: Screenshot Analysis
+
+1. HTTP Filter:
+The "http" display filter was used to isolate HTTP traffic.
+
+2. Selected Packet: No. 734
+- Source IP: "151.101.x.x"
+- Destination IP: "192.168.yy.yy"
+- Protocol: HTTP
+- Packet length: "376 bytes"
+
+3. TCP information:
+- Source TCP port: "58482" 
+- Destination TCP port: "80"
+
+4. HTTP Request:
+GET /success.txt?ipv4 HTTP/1.1
+
+5. Host Headers: 
+detectportal.firefox.com
+
+6. Full request URI:
+http://detectportal.firefox.com/success.txt?ipv4 (Wireshark reconstructed the complete HHTP request URL)
+
+7. Conclusion:
+The capture shows an HTTP GET request from 192.168.x.x to detectportal.firefox.com over TCP port 80. 
+Wireshark provides detailed visibility into the request, including the requested resource, Host header, 
+User-Agent, and other HTTP headers. The request is linked to response frame 739, allowing the complete 
+HTTP transaction to be traced.

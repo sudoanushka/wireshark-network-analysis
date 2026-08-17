@@ -1,0 +1,34 @@
+HTTP Response — Screenshot Analysis
+
+1. HTTP Filter:
+The "http" display filter was used to isolate HTTP traffic.
+
+2. Selected Packet: No. 739.
+- Source IP: "151.101.10y.yy"
+- Destination IP: "192.168.x.x"
+- Protocol: HTTP
+- Packet length: "442 bytes"
+
+3. TCP information:
+- Source TCP port: "80" (http traditionally operates on tcp port 80)
+- Destination TCP port: "58482"
+
+4. HTTP Status:
+The response contains: HTTP/1.1 200 OK
+Status code- "200" 
+Status Description- OK (indicates that the server successfully processed the HTTP request)
+
+5. Response Content:
+Content-Length: 8 (The response contains 8 bytes of content)
+Content-Type: text/plain (indicating that the returned resource is plain text)
+
+6. Connection behaviour:
+Connection: close (indicates that the HTTP connection is intended to close after the response)
+
+7. Server:
+Server: Varnish (provides information about the server/cache infrastructure handling the response)
+
+8. Conclusion:
+This capture demonstrates the response side of an HTTP transaction. The server at "151.101.1yy.yy" 
+responded to the client's HTTP request with "HTTP/1.1 200 OK" and returned a small plain-text resource. 
+The packet also provides visibility into HTTP headers and caching behaviour.

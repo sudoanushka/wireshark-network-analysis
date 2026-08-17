@@ -1,0 +1,42 @@
+HTTP Traffic Analysis — Screenshot Analysis
+
+1. Display filter:
+The "http" display filter was used to isolate HTTP packets from the captured traffic.
+
+2. Selected Packet: No. 734
+- Source IP: "192.168.x.x"
+- Destination IP: "151.101.10y.yy"
+- Protocol: HTTP
+- Packet length: "376 bytes"
+
+3. TCP information:
+- Source port: "58482"
+- Destination port: "80"
+
+4. HTTP Request:
+The client is therefore requesting the "/success.txt?ipv4" resource from the server using HTTP/1.1.
+
+5. HTTP Headers:
+The packet also contains HTTP headers such as the "Host" and "User-Agent" fields (identifies the 
+software making request).
+
+6. HTTP Response:
+The capture contains corresponding HTTP responses showing: HTTP/1.1 200 OK
+The response is identified as: text/plain
+The "200 OK" status indicates that the server successfully processed the request and returned a response.
+
+7. IPv4 and IPv6 traffic:
+IPv4 address: 151.101.105.91
+IPv6 address: 2404:4e42:19::347
+This demonstrates HTTP traffic over both IPv4 and IPv6 in the captured network activity.
+
+8. Cybersecurity Relevance:
+HTTP packet analysis demonstrates how application-layer information can be visible when communication
+is not encrypted. An analyst can inspect requests, host information, user-agent information, response codes, 
+and other headers within captured HTTP traffic.
+This also provides a useful contrast with TLS/HTTPS analysis, where application data is encrypted.
+
+9. Conclusion:
+The capture demonstrates a complete HTTP request-response exchange. The client "192.168.x.x" sends
+a GET request to a remote server over TCP port "80", and the server responds with an HTTP "200 OK" response
+containing plain-text content.
