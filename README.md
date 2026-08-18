@@ -5,7 +5,7 @@ Overview
 
 This project demonstrates practical network traffic analysis using Wireshark. The purpose of the project is to understand how common network protocols operate at the packet level and to develop foundational skills in network monitoring, troubleshooting, and cybersecurity analysis.
 
-The project covers DNS, HTTP, TCP, ICMP, ARP, and TLS traffic
+The project covers DNS, HTTP, TCP, ICMP, and ARP traffic
 
 Objectives
 - Understand packet-level network communication.
@@ -16,7 +16,6 @@ Objectives
 - Understand HTTP requests and responses.
 - Investigate ICMP echo traffic.
 - Examine ARP requests and replies.
-- Understand the basic structure of TLS communication.
 - Develop practical network-analysis and cybersecurity investigation skills.
 
 Tools Used
@@ -35,7 +34,6 @@ Key Skills Demonstrated
 - TCP handshake analysis
 - ICMP traffic analysis
 - ARP analysis
-- TLS handshake analysis
 - Wireshark display filtering
 - Basic network troubleshooting
 - Security-focused traffic investigation
@@ -53,9 +51,8 @@ The project helped strengthen my ability to:
 5. Understand communication between network devices.
 6. Analyze TCP connection establishment.
 7. Investigate DNS resolution.
-8. Examine encrypted TLS communication.
-9. Interpret ARP and ICMP traffic.
-10. Document technical observations in a structured manner.
+8. Interpret ARP and ICMP traffic.
+9. Document technical observations in a structured manner.
 
 Relevance
 
