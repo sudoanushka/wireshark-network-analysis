@@ -1,30 +1,29 @@
 DNS Response Analysis- Screenshot Analysis
 
+1. Wireshark Filter:
 The "dns" display filter was used to isolate DNS packets from the captured network traffic.
 
-The selected packet is Packet No. 14836.
-
+2. Selected Packet: No. 14836.
 - Source: "192.168.y.y"
 - Destination: "192.168.x.x"
 - Protocol: DNS
 - Packet length: 299 bytes
 - Type: Standard query response
-- Transaction ID: "0xaf9c"
 
-The packet represents a DNS response travelling from "192.168.y.y" to "192.168.x.x".
-
+3. DNS Query: 
 The response corresponds to a query for: www.youtube.com
-
 The requested record type is: AAAA
 An AAAA record is used to provide an IPv6 address for a hostname.
 
+4. IPv6 Addresses:
 The response contains multiple IPv6 addresses for "www.youtube.com". Several returned addresses 
 begin with the "2001:4860:" prefix.
 This demonstrates that the DNS server can return multiple IPv6 addresses associated with a hostname.
 
+5. Request-Response Relationship:
 Wireshark identifies the corresponding request as Packet 14832 and reports: 13.906513 milliseconds
 
-Key Observation:
+6. Key Observation:
 The capture demonstrates a complete DNS query-response relationship for "www.youtube.com".
 The client requested an AAAA record, and the DNS server returned multiple IPv6 addresses. 
 Wireshark also provided the associated request packet and response timing, allowing the DNS transaction
