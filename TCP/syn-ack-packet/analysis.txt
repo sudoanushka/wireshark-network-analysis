@@ -1,0 +1,30 @@
+SYN-ACK Packet: Screenshot Analysis
+
+1. Wireshark Filter: 
+tcp
+
+2. Selected Packet : Frame 88 shows:
+-Source: IPv6 address ending in ...:8845
+-Destination: IPv6 address ending in ...:3347
+-Protocol: TCP
+-Source Port: 443
+-Destination Port: 55108
+-Flags: SYN, ACK
+-Length: 94 bytes
+
+3. Source and Destination: 
+Source IP & Port: 2a04:4e42:19::... : 443 (HTTPS)
+Destination IP & Port: 2401:4900:8845:b38d:ad2:b94a:5fbb:...c : 55108
+
+4. Request/Response Information:
+Server response packet carrying SYN, ACK flags acknowledging the client's initial 
+connection request (SYN) and offering to establish the return directional connection.
+
+5. Packet/Frame Correlation:
+This packet (Frame 88) represents step 2 of the TCP three-way handshake for Stream Index 0. 
+It directly replies to the client's initial SYN packet (Frame 87) and precedes the final 
+handshake confirmation ACK packet (Frame 89).
+
+6. Conclusion:
+Frame 88 marks the successful second stage of the standard TCP three-way handshake (SYN-ACK),
+confirming server availability over IPv6 before completing socket initialization.

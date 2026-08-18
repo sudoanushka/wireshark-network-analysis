@@ -1,0 +1,35 @@
+ACK Packet: Screenshot Analysis
+
+1. Wireshark filter:
+tcp
+
+2. Selected Frame: 89 
+-Protocol: TCP
+-Source Port: 55108
+-Destination Port: 443
+-TCP Flags: ACK
+-Sequence Number: 1
+-Acknowledgment Number: 1
+-TCP payload length: 0
+
+3. Source and Destination:
+Source IP & Port: 2401:4900:8845:b38d:ad2:b94a:5fbb:.... : 55108
+Destination IP & Port: 2a04:4e42:19::... : 443 (HTTPS)
+
+4. Request/Response Information:
+Final acknowledgement segment (ACK) sent from client to server to confirm receipt of 
+the server's SYN-ACK and finalize full-duplex TCP socket creation
+
+5. Packet/Frame Correlation:
+This packet (Frame 89) represents step 3 of 3 in the TCP three-way handshake for Stream Index 0. 
+It completes the sequence initiated by Frame 87 (SYN) and replied to by Frame 88 (SYN, ACK),
+opening the path for TLS session negotiation in Frame 91 (Client Hello).
+
+6. Security/Cybersecurity Relevance:
+Verifies the complete setup of a reliable TCP session prior to secure data transfer. In security operations, 
+tracking established ACK frames helps distinguish between completed connections vs. incomplete or 
+half-open scan attempts (such as SYN stealth scans).
+
+7. Conclusion:
+Frame 89 concludes the classic TCP three-way handshake (SYN > SYN-ACK > ACK),
+leaving both hosts ready to exchange encrypted application layer packets over IPv6.

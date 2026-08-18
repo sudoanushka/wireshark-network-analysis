@@ -1,0 +1,36 @@
+TCP handshake: Screenshot Analysis
+
+1.Interface:
+Wireshark is capturing traffic on interface eth0.
+
+2. Display Filter:
+The display filter is "tcp", so only TCP packets are being shown.
+
+3. The highlighted packet is a TCP SYN packet:
+-Source: 2401:4900:8845:b38d:...
+-Destination: 2a04:4e42:19::...
+-Source port: 55108
+-Destination port: 443 (HTTPS)
+[SYN] indicates the beginning of a TCP connection.
+
+3. TCP information: three-way handshake
+-SYN (Packet 87): client requests a connection.
+-SYN, ACK (Packet 88): server acknowledges and responds.
+-ACK (Packet 89): client confirms the connection.
+
+4. The capture shows TLS 1.3 packets, including:
+-Client Hello
+-Server Hello
+-Application Data
+
+5. Host Headers: 
+detectportal.firefox.com
+
+6. Full request URI:
+http://detectportal.firefox.com/success.txt?ipv4 (Wireshark reconstructed the complete HHTP request URL)
+
+7. Conclusion:
+The capture shows an HTTP GET request from 192.168.x.x to detectportal.firefox.com over TCP port 80. 
+Wireshark provides detailed visibility into the request, including the requested resource, Host header, 
+User-Agent, and other HTTP headers. The request is linked to response frame 739, allowing the complete 
+HTTP transaction to be traced.

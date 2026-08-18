@@ -1,0 +1,37 @@
+SYN Packet: Screenshot Analysis
+
+1. Display Filter:
+The display filter shown at the top is "tcp".
+
+2. Selected Packet — No. 87
+-Source: 2401:4900:8845:b38d:...
+-Destination: 2a04:4e42:19::...
+-Protocol: TCP
+-Length: 94 bytes
+
+3. TCP Layer:
+-Source Port: 55108
+-Destination Port: 443
+-TCP Flag: SYN
+-Sequence Number: 0
+-TCP Payload Length: 0
+
+4. Request/Response Information:
+A SYN packet is used to initiate a TCP connection and synchronize sequence
+numbers between the two endpoints.
+Because this packet contains SYN but not ACK, it represents the initial 
+connection request.
+
+5.  MSS (Maximum Segment Size):
+specifies the maximum amount of TCP payload the sender is prepared to receive in a single TCP segment.
+Here the advertised MSS is 1420 bytes.
+
+6. SACK permitted: 
+This means that Selective Acknowledgment (SACK) is supported.
+SACK allows TCP to acknowledge specific portions of data that have successfully arrived.
+
+7. Conclusion:
+Packet 87 represents the initial TCP SYN used to establish an IPv6 connection from 2401:4900:8845:b38d:...
+using client port 55108 to destination 2a04:4e42:19::... on port 443.
+Following this handshake, the capture shows a TLS 1.3 Client Hello, demonstrating the transition from
+TCP connection establishment to encrypted communication.
