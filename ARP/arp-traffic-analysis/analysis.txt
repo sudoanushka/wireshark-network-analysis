@@ -1,0 +1,42 @@
+ARP Traffic: Screenshot Analysis
+
+1. Wireshark Filter:
+arp
+
+2. Source and Destination:
+Source MAC: PCSSystemtec_ee:01:xx 
+Destination MAC: ZyxelCommuni_01:xx:b0 
+
+3. TCP/IP Details:
+Data Link layer Address Resolution Protocol frame operating directly over Ethernet II (Layer 2) 
+to resolve IP address 192.168.x.x to physical MAC address 08:00:27:xx:xx:xx.
+
+4. Protocol Details:
+Address Resolution Protocol (ARP) operating at Data Link / Network layer boundary with opcode set 
+to ARP Reply (is at).
+
+5. Request/Response Information: 
+Request (Frame 687): Who has 192.168.x.x? Tell 192.168.y.y (Broadcast)
+Response (Frame 688): 192.168.x.x is at 08:00:27:xx:xx:xx (Unicast)
+
+6. Packet/Frame Correlation: 
+This unicast ARP reply (Frame 688) directly answers the broadcast ARP request sent in Frame 687
+by 192.168.x.x asking for the location of 192.168.y.y.
+
+7. What the Screenshot Shows:
+The Packet List pane filtered for ARP packets displaying local network address resolution events. 
+Frame 688 is highlighted, demonstrating a host (192.168.x.x) actively responding to the 
+router/gateway (192.168.y.y) with its hardware address.
+
+8. Security/Cybersecurity Relevance:
+Monitoring ARP traffic is vital for detecting ARP Spoofing / ARP Poisoning attacks, 
+Man-in-the-Middle (MITM) positioning, host discovery scanning, and rogue device introductions 
+within local LAN segments.
+
+9. Key Learnings:
+Highlights how Layer 2 networks map IP addresses to physical MAC addresses using broadcast requests 
+(Who has...) followed by direct unicast replies (...is at).
+
+10. Conclusion:
+Frame 688 represents a standard ARP resolution sequence enabling communication between 
+local hosts 192.168.x.x and 192.168.y.y on the local Ethernet segment.

@@ -1,0 +1,41 @@
+ARP Request: Screenshot Analysis
+
+1. Wireshark Filter:
+arp
+
+2. Selected Packet:
+Frame 1
+
+3. Source and Destination:
+Source MAC: ZyxelCommuni_01:63:b0 
+Destination MAC: Broadcast 
+
+4. TCP/IP Details:
+Data Link layer Address Resolution Protocol frame operating directly over Ethernet II (Layer 2) 
+to broadcast a query asking for the hardware address corresponding to IP 192.168.y.y.
+
+5. Protocol Details:
+Address Resolution Protocol (ARP) operating at the Data Link / Network layer boundary with opcode 
+set to ARP Request (request).
+
+6. Request/Response Information:
+Request (Frame 1): Who has 192.168.x.x? Tell 192.168.y.y (Broadcast)
+Response: Pending / None shown in this frame capture (subsequent retries appear in Frame 71 and Frame 3381).
+
+7. Packet/Frame Correlation:
+This frame represents the initial ARP Request in the capture file, sent as a Layer 2 broadcast.
+It precedes repeated unacknowledged requests for 192.168.x.x across later frames (Frame 71 and Frame 3381).
+
+8. Security/Cybersecurity Relevance:
+Broadcasting ARP requests exposes network topology by signaling active local IP queries. 
+Repeated unanswered ARP requests can indicate dead hosts, incomplete network discovery scans, 
+or potential target probing within a LAN segment.
+
+9. Key Learnings:
+Demonstrates how Layer 2 devices query an entire local network broadcast domain (ff:ff:ff:ff:ff:ff)
+using an unknown placeholder Target MAC (00:00:00:00:00:00) when attempting to map an IP address 
+to a physical address.
+
+10. Conclusion: 
+Frame 1 is a standard ARP request broadcast initiated by 192.168.y.y seeking to locate host 192.168.x.x
+on the local network segment.

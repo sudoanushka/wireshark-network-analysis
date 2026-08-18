@@ -1,0 +1,35 @@
+ARP Reply: Screenshot Analysis
+
+1. Wireshark Filter:
+arp
+
+2. Selected Packet:
+Frame 688 
+
+3. Source and Destination:
+Source MAC: PCSSystemtec_ee:01:ss 
+Destination MAC: ZyxelCommuni_01:63:dd 
+
+4. TCP/IP Details:
+Data Link layer Address Resolution Protocol frame operating directly over Ethernet II (Layer 2) 
+to supply the physical MAC address for IP 192.168.x.x.
+
+5. Protocol Details: 
+Address Resolution Protocol (ARP) operating at the Data Link / Network layer boundary with opcode 
+set to ARP Reply (reply).
+
+6. Request/Response Information:
+Request (Frame 687):  (Broadcast)
+Response (Frame 688):  (Unicast)
+
+7. Packet/Frame Correlation:
+This unicast ARP reply directly answers the broadcast ARP request initiated in 
+Frame 687 by device 192.168.y.y.
+
+8. Security/Cybersecurity Relevance:
+Monitoring ARP replies is essential for validating legitimate local network mapping and detecting
+malicious spoofed responses (such as unsolicited ARP poison replies) used in Man-in-the-Middle (MITM) attacks.
+
+9. Key Learnings: 
+Demonstrates how Layer 2 devices complete address mapping by sending a direct, unicast ARP reply 
+containing their physical MAC address back to the requesting host.
