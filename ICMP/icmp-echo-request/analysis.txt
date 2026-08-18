@@ -1,0 +1,41 @@
+ICMP Request: Screenshot Analysis
+
+1. Wireshark Filter:
+icmp
+
+2. Selected Packet:
+Frame 33
+
+3. Source and Destination:
+Source IP & MAC: 192.168.x.x 
+Destination IP & MAC: 192.168.y.y 
+
+4. TCP/IP Details:
+Ethernet II frame encapsulated in IPv4 (192.168.x.x → 192.168.y.y), carrying Internet Control Message Protocol
+(ICMP) data at the Network Layer.
+
+5. Protocol Details:
+Internet Control Message Protocol (ICMP) packet representing an Echo (ping) Request sent from
+host 192.168.x.x to gateway/host 192.168.y.y.
+
+6. Request/Response Information:
+Request (Frame 33): Echo (ping) request 
+Response (Frame 34): Echo (ping) reply 
+
+7. Packet/Frame Correlation:
+This frame (Frame 33) is the initial ICMP Echo Request of a 4-packet ping sequence (Frames 33–40). 
+Wireshark automatically correlates Frame 33 to its corresponding Echo Reply in Frame 34 (reply in 34).
+
+8. Security/Cybersecurity Relevance: 
+ICMP traffic monitoring is essential for detecting network discovery/reconnaissance scans (ping sweeps),
+mapping active hosts, identifying ICMP tunneling/data exfiltration attempts, and spotting ICMP flood 
+Denial-of-Service (DoS) attacks.
+
+9. Key Learnings:
+Demonstrates how diagnostic tools like ping use matching ICMP identifier values (id=0x65ca) and
+incremental sequence numbers (seq=1, seq=2, etc.) to pair outbound Echo Requests with incoming 
+Echo Replies and calculate round-trip latency.
+
+10. Conclusion: 
+Frame 33 initiates a standard ICMP Echo diagnostic sequence, confirming active layer-3 connectivity
+and low-latency communication between 192.168.x.x and 192.168.y.y.

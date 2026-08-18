@@ -1,0 +1,41 @@
+ICMP Reply: Screenshot Analysis
+
+1. Wireshark Filter:
+icmp
+
+2. Selected Packet: 
+Frame 34
+
+3. Source and Destination: 
+Source IP & MAC: 192.168.y.y
+Destination IP & MAC: 192.168.x.x
+
+4. TCP/IP Details:
+Ethernet II frame encapsulated in IPv4, carrying Internet
+Control Message Protocol (ICMP) reply data at the Network Layer.
+ 
+5. Protocol Details:
+Internet Control Message Protocol (ICMP) packet representing an Echo (ping) Reply sent from 
+gateway/host 192.168.y.y back to requesting host 192.168.x.x.
+
+6.Request/Response Information:
+Request (Frame 33): Echo (ping) request
+Response (Frame 34): Echo (ping) reply 
+
+7. Packet/Frame Correlation: 
+This frame (Frame 34) is the direct ICMP Echo Reply to Frame 33 ([Request frame: 33]). 
+Wireshark automatically pairs them together and calculates a round-trip delay time of
+2.945 milliseconds.
+
+8. Security/Cybersecurity Relevance:
+Analyzing ICMP replies confirms host reachability, helps measure round-trip latency, and 
+enables identification of unexpected ICMP payloads or improper ICMP echo responses during 
+network monitoring.
+
+9. Key Learnings: 
+Demonstrates how Wireshark automatically links asynchronous Layer-3 requests and replies using 
+ICMP Identifiers and Sequence Numbers, providing calculated fields like response time (2.945 ms).
+
+10. Conclusion:
+Frame 34 confirms a successful ICMP Echo Reply from 192.168.y.y, verifying two-way communication and
+low latency back to 192.168.x.x.

@@ -1,0 +1,17 @@
+ICMP Traffic Capture: Screenshot Analysis
+
+1. Wireshark Filter: 
+icmp 
+
+2.TCP/IP Details:
+Ethernet II frame encapsulated in IPv4 , carrying 
+Internet Control Message Protocol (ICMP) data at the Network Layer.
+ 
+3. Request/Response Information:
+Request (Frame 33): Echo (ping) request
+Response (Frame 34): Echo (ping) reply 
+
+4. Security/Cybersecurity Relevance:
+ICMP traffic monitoring is essential for detecting network discovery/reconnaissance scans (ping sweeps),
+mapping active hosts, identifying ICMP tunneling/data exfiltration attempts, and spotting 
+ICMP flood Denial-of-Service (DoS) attacks.
